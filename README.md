@@ -4,11 +4,11 @@ Projeto em react-redux para a finalização do módulo `react-redux` da Udacity.
 
 ## Pré-requisitos
 
-| node >=v6.11.0
+> node >=v6.11.0
 
 ## Instalação
 
-| run yarn install
+> run yarn install
 
 ## Especificação
 Funcionalidades desejadas na applicação.
@@ -16,14 +16,14 @@ Funcionalidades desejadas na applicação.
 ### Dados
 Há três tipos de objetos armazenados no servidor:
 
-### Categories
+#### Categories
  - Posts
  - Comments
  - Categories
 
 O servidor suporta um número pequeno e fixo de categorias que os usuários podem postar baseando-se. As categories são objetos simples contendo um nome um um caminho de URL (normalmente a mesma string). O servidor não possui métodos para criar/modificar/deletar essas categorias. Se você deseja adicionar categorias para o seu app, simplesmente adicione o objeto desejado à Array em categories.js no servidor fornecido.
 
-### Posts
+#### Posts
 As postagem são os blocos de construção de seu aplicativo. Elas incluem:
 
 |Atributo	|Tipo	|Descrição|
@@ -37,7 +37,7 @@ As postagem são os blocos de construção de seu aplicativo. Elas incluem:
 |voteScore	|Integer	|Votos líquidos que a postagem recebeu (default: 1)|
 |deleted	|Boolean	|Marcado se o post foi 'deletado' (sem acesso no front end), (default: false)|
 
-### Comments
+#### Comments
 Os comentários são anexados às postagens mães. Eles incluem:
 
 |Atributo	|Tipo	|Descrição|
@@ -51,9 +51,9 @@ voteScore	|Integer	|Votos líquidos que a postagem recebeu (default: 1)|
 deleted	|Boolean	|Marcado se o post foi 'deletado' (sem acesso no front end), (default: false)|
 parentDeleted	|Boolean	|Marcado quando o post pai foi deletado, mas o comentário em si não foi.|
 
-*Este aplicativo é anônimo, sem autenticação ou autorização. Não há nenhum objeto user, e comentários e postagens aceitam qualquer nome de usuário/nome para criação e edição.*
+:warning: **Este aplicativo é anônimo, sem autenticação ou autorização. Não há nenhum objeto user, e comentários e postagens aceitam qualquer nome de usuário/nome para criação e edição.**
 
-*O servidor é muito leve. Ele executa zero validações de dados para impor os tipos de dados acima. Certifique-se de que você está usando os tipos corretos quando enviar requisições ao servidor.*
+:warning: **O servidor é muito leve. Ele executa zero validações de dados para impor os tipos de dados acima. Certifique-se de que você está usando os tipos corretos quando enviar requisições ao servidor.**
 
 ### Views
 Seu aplicativo deve ter, no mínimo, quatro views:
@@ -77,4 +77,4 @@ Seu aplicativo deve ter, no mínimo, quatro views:
  - ao editar, os dados existentes devem ser povoados no formulário
 UI de Comentários/Postagens
 
-*Postagens e comentários, em todas as views onde são exibidos, devem exibir a pontuação atual e ter controles para incrementar ou diminuir o voteScore do objeto. As postagens devem exibir o número de comentários associados a elas.*
+:warning: **Postagens e comentários, em todas as views onde são exibidos, devem exibir a pontuação atual e ter controles para incrementar ou diminuir o voteScore do objeto. As postagens devem exibir o número de comentários associados a elas.**
