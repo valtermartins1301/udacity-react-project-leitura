@@ -8,7 +8,7 @@ Projeto em react-redux para a finalização do módulo `react-redux` da Udacity.
 
 ## Instalação
 
-> run yarn install
+> yarn install
 
 ## Especificação
 Funcionalidades desejadas na applicação.
@@ -58,23 +58,23 @@ parentDeleted	|Boolean	|Marcado quando o post pai foi deletado, mas o comentári
 ### Views
 Seu aplicativo deve ter, no mínimo, quatro views:
 
-- Padrão (Root)
- - deve listar todas as categorias disponíveis, que devem se conectar a uma view de categoria para esta categoria
- - deve listar todas as postagens ordenadas pelo voteScore (começando pela pontuação mais alta)
- - deve ter um controle para modificar o método de ordenação da lista, incluindo, no mínimo, ordenar por voteScore e ordenar por data de criação
- - deve ter um controle para adicionar novas postagens
-- View de Categoria
- - idêntica à view padrão, mas filtrada para incluir somente postagens com a categoria selecionada
-- View de Detalhe da Postagem
- - deve mostrar os detalhes da postagem, incluindo: título, corpo, autor, data de criação em formato legível pelo usuário e pontuação dos votos
- - deve listar todos os comentários daquela postagem, ordenados por voteScore (começando pelo mais alto)
- - deve ter controles para editar ou remover a postagem
- - deve ter um controle para adicionar um novo comentário
- - implemente o formulário de comentários da forma que quiser (em linha, modal, etc.)
- - os comentários também devem ter controles para edição ou exclusão
-- Criar/Editar a View
- - deve ter um formulário para criar novas postagens ou editar as existentes
- - ao editar, os dados existentes devem ser povoados no formulário
+- **Padrão (Root)**
+  - deve listar todas as categorias disponíveis, que devem se conectar a uma view de categoria para esta categoria
+  - deve listar todas as postagens ordenadas pelo voteScore (começando pela pontuação mais alta)
+  - deve ter um controle para modificar o método de ordenação da lista, incluindo, no mínimo, ordenar por voteScore e ordenar por data de criação
+  - deve ter um controle para adicionar novas postagens
+- **View de Categoria**
+  - idêntica à view padrão, mas filtrada para incluir somente postagens com a categoria selecionada
+- **View de Detalhe da Postagem**
+  - deve mostrar os detalhes da postagem, incluindo: título, corpo, autor, data de criação em formato legível pelo usuário e pontuação dos votos
+  - deve listar todos os comentários daquela postagem, ordenados por voteScore (começando pelo mais alto)
+  - deve ter controles para editar ou remover a postagem
+  - deve ter um controle para adicionar um novo comentário
+  - implemente o formulário de comentários da forma que quiser (em linha, modal, etc.)
+  - os comentários também devem ter controles para edição ou exclusão
+- **Criar/Editar a View**
+  - deve ter um formulário para criar novas postagens ou editar as existentes
+  - ao editar, os dados existentes devem ser povoados no formulário
 UI de Comentários/Postagens
 
 :warning: **Postagens e comentários, em todas as views onde são exibidos, devem exibir a pontuação atual e ter controles para incrementar ou diminuir o voteScore do objeto. As postagens devem exibir o número de comentários associados a elas.**
