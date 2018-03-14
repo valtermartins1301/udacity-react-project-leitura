@@ -2,18 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { withStyles } from 'material-ui/styles';
 import App from './App';
+import Navigation from './Navigation';
+import styles from '../styles/Root';
 
-const Root = ({ store }) => (
+const Root = ({ store, classes }) => (
   <Provider store={store}>
-    <Router>
-      <Route path="/" component={App} />
-    </Router>
+    <div className={classes.root}>
+      <Navigation />
+      <main className={classes.content}>
+        <Router>
+          <Route path="/" component={App} />
+        </Router>
+      </main>
+    </div>
   </Provider>
 );
 
 Root.propTypes = {
   store: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired,
 };
 
-export default Root;
+export default withStyles(styles)(Root);
