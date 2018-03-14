@@ -1,10 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './Components/App';
-import './index.css';
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import todoApp from './reducers';
+import Root from './components/Root';
 
-ReactDOM.render(
-  <BrowserRouter><App /></BrowserRouter>,
+const store = createStore(todoApp);
+
+render(
+  <Root store={store} />,
   document.getElementById('root'),
 );
