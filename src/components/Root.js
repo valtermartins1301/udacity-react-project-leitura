@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
-import App from './App';
+import Posts from './Posts';
 import Navigation from './Navigation';
 import styles from '../styles/Root';
 
@@ -13,7 +13,7 @@ const Root = ({ store, classes }) => (
       <Navigation />
       <main className={classes.content}>
         <Router>
-          <Route path="/" component={App} />
+          <Route path="/" component={Posts} />
         </Router>
       </main>
     </div>

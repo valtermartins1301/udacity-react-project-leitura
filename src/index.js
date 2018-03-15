@@ -5,7 +5,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import Root from './components/Root';
-import { fetchPosts } from './actions/Post';
 
 const loggerMiddleware = createLogger();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose //eslint-disable-line
@@ -17,8 +16,6 @@ const store = createStore(
     loggerMiddleware,
   )),
 );
-
-store.dispatch(fetchPosts('reactjs'));
 
 render(
   <Root store={store} />,
