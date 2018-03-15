@@ -16,16 +16,14 @@ class Posts extends Component {
 
   render() {
     const { items, classes } = this.props;
+    const sortedItems = items.sort((a, b) => a.voteScore < b.voteScore);
 
     return (
       <div className={classes.app}>
         <Grid container spacing={24}>
-          {items.map(post => (
-            <Grid item xs={4}>
-              <Post
-                key={post.id}
-                post={post}
-              />
+          {sortedItems.map(post => (
+            <Grid item xs={4} key={post.id}>
+              <Post post={post} />
             </Grid>
           ))}
         </Grid>
