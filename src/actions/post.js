@@ -10,5 +10,5 @@ export const receivePosts = posts => ({
 
 export const fetchPosts = () => dispatch => (
   fetchAllPosts()
-    .then(todos => dispatch(receivePosts(todos)))
+    .then(posts => dispatch(receivePosts(posts)))
 );
