@@ -6,6 +6,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/post';
 import styles from '../styles/App';
+import Post from './Post';
 
 class Posts extends Component {
   componentDidMount() {
@@ -19,15 +20,14 @@ class Posts extends Component {
     return (
       <div className={classes.app}>
         <Grid container spacing={24}>
-          <Grid item xs={12}>
-
-            {items.map(post => (
-              <p key={post.id}>
-                {post.title}
-              </p>
-            ))}
-
-          </Grid>
+          {items.map(post => (
+            <Grid item xs={4}>
+              <Post
+                key={post.id}
+                post={post}
+              />
+            </Grid>
+          ))}
         </Grid>
       </div>
     );
