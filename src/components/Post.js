@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
+import Moment from 'react-moment';
 import VoteScore from './VoteScore';
 
 const styles = theme => ({
@@ -35,7 +36,7 @@ function Post({ classes, post }) {
             {post.title}
           </Typography>
           <Typography className={classes.author}>
-            {post.author}
+            {post.author} - <Moment format="DD/MM/YYYY">{post.timestamp}</Moment>
           </Typography>
           <Typography component="p">
             {post.body}
