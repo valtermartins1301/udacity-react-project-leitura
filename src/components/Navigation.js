@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import BottomNavigation, { BottomNavigationAction } from 'material-ui/BottomNavigation';
+import Paper from 'material-ui/Paper';
+import Tabs, { Tab } from 'material-ui/Tabs';
 import HomeIcon from 'material-ui-icons/Home';
 import styles from '../styles/Navigation';
 
@@ -19,14 +20,17 @@ class Navigation extends React.Component {
     const { value } = this.state;
 
     return (
-      <BottomNavigation
-        value={value}
-        onChange={this.handleChange}
-        showLabels
-        className={classes.root}
-      >
-        <BottomNavigationAction label="Posts" icon={<HomeIcon />} />
-      </BottomNavigation>
+      <Paper className={classes.root} elevation={0}>
+        <Tabs
+          value={value}
+          onChange={this.handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          centered
+        >
+          <Tab icon={<HomeIcon />} label="Principal" />
+        </Tabs>
+      </Paper>
     );
   }
 }
