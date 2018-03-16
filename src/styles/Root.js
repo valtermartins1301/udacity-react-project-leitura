@@ -5,6 +5,7 @@ const styles = theme => ({
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
+    height: '97vh',
   },
   content: {
     flexGrow: 1,

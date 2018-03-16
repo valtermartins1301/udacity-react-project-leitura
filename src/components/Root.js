@@ -3,20 +3,23 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
+import Paper from 'material-ui/Paper';
 import PostList from './PostList';
+import Header from './Header';
 import Navigation from './Navigation';
 import styles from '../styles/Root';
 
 const Root = ({ store, classes }) => (
   <Provider store={store}>
-    <div className={classes.root}>
+    <Paper className={classes.root}>
+      <Header />
       <Navigation />
       <main className={classes.content}>
         <Router>
           <Route path="/" component={PostList} />
         </Router>
       </main>
-    </div>
+    </Paper>
   </Provider>
 );
 
