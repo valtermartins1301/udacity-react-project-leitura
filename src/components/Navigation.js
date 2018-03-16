@@ -20,11 +20,10 @@ class Navigation extends React.Component {
     const { value } = this.state;
 
     return (
-      <Paper className={classes.root} elevation={0}>
+      <Paper className={classes.root}>
         <Tabs
           value={value}
           onChange={this.handleChange}
-          indicatorColor="primary"
           textColor="primary"
           centered
         >

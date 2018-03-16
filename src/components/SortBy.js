@@ -18,7 +18,12 @@ const SortBy = ({
         onChange={handleChange}
       >
         {options.map(option => (
-          <FormControlLabel value={option.key} control={<Radio />} label={option.value} />
+          <FormControlLabel
+            key={option.key}
+            value={option.key}
+            control={<Radio />}
+            label={option.value}
+          />
         ))}
       </RadioGroup>
     </FormControl>

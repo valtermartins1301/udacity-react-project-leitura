@@ -11,15 +11,17 @@ import styles from '../styles/Root';
 
 const Root = ({ store, classes }) => (
   <Provider store={store}>
-    <Paper className={classes.root}>
+    <div className={classes.root}>
       <Header />
-      <Navigation />
-      <main className={classes.content}>
-        <Router>
-          <Route path="/" component={PostList} />
-        </Router>
+      <main className={classes.container}>
+        <Navigation />
+        <Paper className={classes.content}>
+          <Router>
+            <Route path="/" component={PostList} />
+          </Router>
+        </Paper>
       </main>
-    </Paper>
+    </div>
   </Provider>
 );
 

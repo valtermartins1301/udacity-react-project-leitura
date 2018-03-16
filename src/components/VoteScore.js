@@ -4,15 +4,7 @@ import { withStyles } from 'material-ui/styles';
 import Badge from 'material-ui/Badge';
 import IconButton from 'material-ui/IconButton';
 import FavoriteIcon from 'material-ui-icons/Favorite';
-
-const styles = theme => ({
-  margin: {
-    margin: theme.spacing.unit * 2,
-  },
-  padding: {
-    padding: `0 ${theme.spacing.unit}px`,
-  },
-});
+import styles from '../styles/VoteScore';
 
 const VoteScore = ({ classes, score }) => (
   <IconButton>

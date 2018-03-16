@@ -5,12 +5,15 @@ const styles = theme => ({
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
-    height: '97vh',
   },
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
+    padding: theme.spacing.unit * 2,
+    minHeight: '71vh',
+  },
+  container: {
+    padding: theme.spacing.unit,
   },
 });
 

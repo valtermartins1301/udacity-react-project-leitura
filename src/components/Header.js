@@ -7,7 +7,7 @@ import Toolbar from 'material-ui/Toolbar';
 import styles from '../styles/Header';
 
 const Header = ({ classes }) => (
-  <div classNames={classes.root}>
+  <div className={classes.root}>
     <AppBar position="static" color="primary">
       <Toolbar>
         <Typography variant="title" color="inherit" className={classes.flex}>
