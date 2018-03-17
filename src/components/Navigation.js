@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Tabs, { Tab } from 'material-ui/Tabs';
-import HomeIcon from 'material-ui-icons/Home';
+import ViewListIcon from 'material-ui-icons/ViewList';
+import SortIcon from 'material-ui-icons/Sort';
 import styles from '../styles/Navigation';
 
 class Navigation extends React.Component {
@@ -27,7 +29,8 @@ class Navigation extends React.Component {
           textColor="primary"
           centered
         >
-          <Tab icon={<HomeIcon />} label="Principal" />
+          <Tab icon={<ViewListIcon />} component={Link} to="/" label="Principal" />
+          <Tab icon={<SortIcon />} component={Link} to="/categories" label="Categorias" />
         </Tabs>
       </Paper>
     );

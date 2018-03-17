@@ -15,15 +15,15 @@ const Root = ({ store, classes }) => (
     <div className={classes.root}>
       <Header />
       <main className={classes.container}>
-        <Navigation />
-        <Paper className={classes.content}>
-          <Router>
-            <Route exact path="/" component={PostList} />
-          </Router>
-          <Router>
-            <Route path="/category" component={PostsByCategory} />
-          </Router>
-        </Paper>
+        <Router>
+          <div>
+            <Navigation />
+            <Paper className={classes.content}>
+              <Route exact path="/" component={PostList} />
+              <Route path="/categories" component={PostsByCategory} />
+            </Paper>
+          </div>
+        </Router>
       </main>
     </div>
   </Provider>
