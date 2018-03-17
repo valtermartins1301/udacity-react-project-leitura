@@ -8,6 +8,7 @@ import PostList from './PostList';
 import Header from './Header';
 import Navigation from './Navigation';
 import styles from '../styles/Root';
+import PostsByCategory from './PostsByCategory';
 
 const Root = ({ store, classes }) => (
   <Provider store={store}>
@@ -17,7 +18,10 @@ const Root = ({ store, classes }) => (
         <Navigation />
         <Paper className={classes.content}>
           <Router>
-            <Route path="/" component={PostList} />
+            <Route exact path="/" component={PostList} />
+          </Router>
+          <Router>
+            <Route path="/category" component={PostsByCategory} />
           </Router>
         </Paper>
       </main>
