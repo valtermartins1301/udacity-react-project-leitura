@@ -15,6 +15,12 @@ const fetchResource = async (resource) => {
   return response.json();
 };
 
+export const fetchPostsByCategory = async (category) => {
+  const response = await fetchResource(`${category}/posts`);
+
+  return response.map(item => postFactory.create(item));
+};
+
 export const fetchAllPosts = async () => {
   const response = await fetchResource('posts');
 
@@ -28,6 +34,7 @@ export const fetchAllCategories = async () => {
 };
 
 export default {
+  fetchPostsByCategory,
   fetchAllPosts,
   fetchAllCategories,
 };
