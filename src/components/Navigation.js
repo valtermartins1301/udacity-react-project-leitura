@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Tabs, { Tab } from 'material-ui/Tabs';
@@ -8,33 +8,28 @@ import ViewListIcon from 'material-ui-icons/ViewList';
 import SortIcon from 'material-ui-icons/Sort';
 import styles from '../styles/Navigation';
 
-class Navigation extends React.Component {
-  state = {
-    value: 0,
-  };
-
-  handleChange = (event, value) => {
-    this.setState({ value });
-  };
-
-  render() {
-    const { classes } = this.props;
-    const { value } = this.state;
-
-    return (
-      <Paper className={classes.root}>
-        <Tabs
-          value={value}
-          onChange={this.handleChange}
-          textColor="primary"
-          centered
-        >
-          <Tab icon={<ViewListIcon />} component={Link} to="/" label="Principal" />
-          <Tab icon={<SortIcon />} component={Link} to="/categories" label="Categorias" />
-        </Tabs>
-      </Paper>
-    );
-  }
+function Navigation({ classes }) {
+  return (
+    <Paper className={classes.root}>
+      <Tabs value={false} textColor="primary" centered>
+        <Tab
+          exact
+          activeClassName={classes.active}
+          icon={<ViewListIcon />}
+          component={NavLink}
+          to="/"
+          label="Principal"
+        />
+        <Tab
+          activeClassName={classes.active}
+          icon={<SortIcon />}
+          component={NavLink}
+          to="/categories"
+          label="Categorias"
+        />
+      </Tabs>
+    </Paper>
+  );
 }
 
 Navigation.propTypes = {
