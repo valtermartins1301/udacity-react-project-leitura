@@ -5,9 +5,10 @@ import { withStyles } from 'material-ui/styles';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/post';
-import styles from '../styles/App';
+import styles from '../styles/PostList';
 import Post from './Post';
 import SortBy from './SortBy';
+import FloatActionBtn from './FloatActionBtn';
 
 class Posts extends Component {
   state = {
@@ -36,7 +37,7 @@ class Posts extends Component {
     const sortedItems = items.sort((a, b) => a[sortBy] < b[sortBy]);
 
     return (
-      <div className={classes.app}>
+      <div className={classes.root}>
         <Grid container spacing={24}>
           <SortBy
             label="Ordenar por:"
@@ -50,6 +51,7 @@ class Posts extends Component {
             </Grid>
           ))}
         </Grid>
+        <FloatActionBtn route="/create-post" />
       </div>
     );
   }

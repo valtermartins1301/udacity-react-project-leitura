@@ -5,9 +5,10 @@ import { withStyles } from 'material-ui/styles';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { fetchCategories } from '../actions/category';
-import styles from '../styles/App';
+import styles from '../styles/PostsByCategory';
 import SortBy from './SortBy';
 import Post from './Post';
+import FloatActionBtn from './FloatActionBtn';
 import { fetchPostsByCategory } from '../util/api';
 
 class PostsByCategory extends Component {
@@ -46,7 +47,7 @@ class PostsByCategory extends Component {
     }));
 
     return (
-      <div className={classes.app}>
+      <div className={classes.root}>
         <Grid container spacing={24}>
           <SortBy
             label="Ordenar por:"
@@ -60,6 +61,7 @@ class PostsByCategory extends Component {
             </Grid>
           ))}
         </Grid>
+        <FloatActionBtn route="/create-post" />
       </div>
     );
   }
