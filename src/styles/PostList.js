@@ -1,5 +1,5 @@
 const styles = () => ({
-  app: {
+  root: {
     textAlign: 'center',
   },
 });
