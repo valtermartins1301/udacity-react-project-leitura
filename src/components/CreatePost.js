@@ -1,22 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import TextField from 'material-ui/TextField';
 import Typography from 'material-ui/Typography';
+import Paper from 'material-ui/Paper';
+import Grid from 'material-ui/Grid';
+import CreatePostForm from './CreatePostForm';
 import styles from '../styles/CreatePost';
 
 function CreatePost({ classes }) {
   return (
-    <form className={classes.root}>
-      <Typography variant="title" color="inherit">
-        Novo Post
-      </Typography>
-      <TextField
-        label="Titulo"
-        className={classes.textField}
-        margin="normal"
-      />
-    </form>
+    <Grid container className={classes.root}>
+      <Grid item xs={12}>
+        <Grid container justify="center">
+          <Paper className={classes.paper}>
+            <Typography variant="display1" color="inherit">
+              Novo Post
+            </Typography>
+            <CreatePostForm />
+          </Paper>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }
 
