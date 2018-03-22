@@ -12,6 +12,12 @@ const styles = theme => ({
   menu: {
     width: 200,
   },
+  actions: {
+    justifyContent: 'flex-end',
+  },
+  button: {
+    margin: theme.spacing.unit,
+  },
 });
 
 export default styles;

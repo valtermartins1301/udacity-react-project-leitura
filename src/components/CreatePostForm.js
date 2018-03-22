@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import TextField from 'material-ui/TextField';
-import MenuItem from 'material-ui/Menu/MenuItem';
+import PropTypes from 'prop-types';
+import Button from 'material-ui/Button';
+import FormInput from './FormInput';
+import FormSelect from './FormSelect';
+import FormTextArea from './FormTextArea';
 import { fetchCategories } from '../actions/category';
 import styles from '../styles/CreatePostForm';
 
 class CreatePostForm extends Component {
   state = {
-    selectedCategory: 'react',
+    category: 'react',
+    body: '',
+    title: '',
+    author: '',
   }
 
   componentDidMount() {
@@ -18,53 +23,57 @@ class CreatePostForm extends Component {
     dispatch(fetchCategories());
   }
 
+  handleChange = name => (event) => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+
   render() {
-    const { selectedCategory } = this.state;
+    const {
+      category, title, author, body,
+    } = this.state;
     const { categories, classes } = this.props;
-    const SelectProps = {
-      MenuProps: {
-        className: classes.menu,
-      },
-    };
 
     return (
       <form className={classes.container} noValidate autoComplete="off">
-        <TextField
+        <FormInput
+          value={title}
+          key="title"
           label="Titulo"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          fullWidth
-          margin="normal"
+          handleChange={this.handleChange}
         />
-        <TextField
+        <FormInput
+          value={author}
+          key="author"
           label="Autor"
-          margin="normal"
+          handleChange={this.handleChange}
         />
-        <TextField
-          select
+        <FormSelect
+          value={category}
+          options={categories}
+          key="category"
           label="Categoria"
           className={classes.textField}
-          value={selectedCategory}
-          SelectProps={SelectProps}
-          margin="normal"
-        >
-          {categories.map(option => (
-            <MenuItem key={option.name} value={option.path}>
-              {option.name}
-            </MenuItem>
-          ))}
-        </TextField>
-        <TextField
-          label="Conteúdo"
-          multiline
-          rows="4"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          fullWidth
-          margin="normal"
+          handleChange={this.handleChange}
         />
+        <FormTextArea
+          key="body"
+          label="Conteúdo"
+          rows="4"
+          value={body}
+          className={classes.textField}
+          handleChange={this.handleChange}
+        />
+
+        <div className={classes.actions}>
+          <Button variant="raised" color="secondary" className={classes.button}>
+            Cancelar
+          </Button>
+          <Button variant="raised" color="primary" className={classes.button}>
+            Salvar
+          </Button>
+        </div>
       </form>
     );
   }
