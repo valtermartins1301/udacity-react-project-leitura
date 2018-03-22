@@ -6,17 +6,19 @@ import Typography from 'material-ui/Typography';
 import Toolbar from 'material-ui/Toolbar';
 import styles from '../styles/Header';
 
-const Header = ({ classes }) => (
-  <div className={classes.root}>
-    <AppBar position="static" color="primary">
-      <Toolbar>
-        <Typography variant="title" color="inherit" className={classes.flex}>
-          The BlogPost
-        </Typography>
-      </Toolbar>
-    </AppBar>
-  </div>
-);
+function Header({ classes }) {
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" color="primary">
+        <Toolbar>
+          <Typography variant="title" color="inherit" className={classes.flex}>
+            The BlogPost
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
+}
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
