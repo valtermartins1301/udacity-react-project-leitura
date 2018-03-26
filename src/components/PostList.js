@@ -37,22 +37,33 @@ class Posts extends Component {
     const sortedItems = items.sort((a, b) => a[sortBy] < b[sortBy]);
 
     return (
-      <div className={classes.root}>
-        <Grid container spacing={24}>
+      <Grid container className={classes.root}>
+        <Grid item xs={2}>
           <SortBy
             label="Ordenar por:"
             options={sortOptions}
             defaultValue={sortBy}
             handleChange={this.onSortChange}
           />
-          {sortedItems.map(post => (
-            <Grid item xs={4} key={post.id}>
-              <Post post={post} />
-            </Grid>
-          ))}
         </Grid>
-        <FloatActionBtn route="/create-post" />
-      </div>
+        <Grid item xs={9}>
+          <Grid
+            container
+            direction="row"
+            alignItems="stretch"
+            spacing={24}
+          >
+            {sortedItems.map(post => (
+              <Grid item xs={4} key={post.id}>
+                <Post post={post} />
+              </Grid>
+          ))}
+          </Grid>
+        </Grid>
+        <Grid item xs={1}>
+          <FloatActionBtn route="/create-post" />
+        </Grid>
+      </Grid>
     );
   }
 }

@@ -1,7 +1,7 @@
 const styles = theme => ({
   fab: {
-    position: 'absolute',
-    bottom: theme.spacing.unit * 2,
+    position: 'fixed',
+    bottom: theme.spacing.unit * 4,
     right: theme.spacing.unit * 2,
   },
 });
