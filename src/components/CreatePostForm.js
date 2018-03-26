@@ -29,6 +29,23 @@ class CreatePostForm extends Component {
     });
   };
 
+  save = async () => {
+    const { onSave } = this.props;
+    const {
+      category, body, title, author,
+    } = this.state;
+
+    return onSave({
+      category, body, title, author,
+    });
+  };
+
+  cancel = () => {
+    const { onCancel } = this.props;
+
+    return onCancel();
+  };
+
   render() {
     const {
       category, title, author, body,
@@ -39,26 +56,26 @@ class CreatePostForm extends Component {
       <form className={classes.container} noValidate autoComplete="off">
         <FormInput
           value={title}
-          key="title"
+          attr="title"
           label="Titulo"
           handleChange={this.handleChange}
         />
         <FormInput
           value={author}
-          key="author"
+          attr="author"
           label="Autor"
           handleChange={this.handleChange}
         />
         <FormSelect
           value={category}
           options={categories}
-          key="category"
+          attr="category"
           label="Categoria"
           className={classes.textField}
           handleChange={this.handleChange}
         />
         <FormTextArea
-          key="body"
+          attr="body"
           label="Conteúdo"
           rows="4"
           value={body}
@@ -67,10 +84,20 @@ class CreatePostForm extends Component {
         />
 
         <div className={classes.actions}>
-          <Button variant="raised" color="secondary" className={classes.button}>
+          <Button
+            onClick={this.cancel}
+            variant="raised"
+            color="secondary"
+            className={classes.button}
+          >
             Cancelar
           </Button>
-          <Button variant="raised" color="primary" className={classes.button}>
+          <Button
+            onClick={this.save}
+            variant="raised"
+            color="primary"
+            className={classes.button}
+          >
             Salvar
           </Button>
         </div>
@@ -83,6 +110,8 @@ CreatePostForm.propTypes = {
   classes: PropTypes.object.isRequired,
   categories: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
+  onSave: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
