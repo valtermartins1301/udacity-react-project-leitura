@@ -9,26 +9,24 @@ const labelProps = {
 };
 
 function FormInput({
-  classes, label, value, key, handleChange,
+  label, value, attr, handleChange,
 }) {
   return (
     <TextField
       label={label}
       InputLabelProps={labelProps}
       margin="normal"
-      className={classes}
       value={value}
-      onChange={() => handleChange(key)}
+      onChange={handleChange(attr)}
       fullWidth
     />
   );
 }
 
 FormInput.propTypes = {
-  classes: PropTypes.object.isRequired,
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  key: PropTypes.string.isRequired,
+  attr: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
 };
 

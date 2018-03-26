@@ -12,21 +12,20 @@ const selectProps = ({ menu }) => ({
 });
 
 function FormSelect({
-  classes, label, value, key, options, handleChange,
+  classes, label, value, attr, options, handleChange,
 }) {
   return (
     <TextField
       select
       label={label}
-      className={classes}
       value={value}
       fullWidth
-      SelectProps={() => selectProps(classes)}
-      onChange={() => handleChange(key)}
+      SelectProps={selectProps(classes)}
+      onChange={handleChange(attr)}
       margin="normal"
     >
       {options.map(option => (
-        <MenuItem key={option.name} value={option.path}>
+        <MenuItem key={option.name} attr={option.name} value={option.path}>
           {option.name}
         </MenuItem>
       ))}
@@ -39,7 +38,7 @@ FormSelect.propTypes = {
   classes: PropTypes.object.isRequired,
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  key: PropTypes.string.isRequired,
+  attr: PropTypes.string.isRequired,
   options: PropTypes.array.isRequired,
   handleChange: PropTypes.func.isRequired,
 };

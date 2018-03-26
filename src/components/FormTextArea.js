@@ -9,7 +9,7 @@ const labelProps = {
 };
 
 function FormTextArea({
-  classes, label, defaultValue, key, rows, handleChange,
+  label, value, attr, rows, handleChange,
 }) {
   return (
     <TextField
@@ -19,18 +19,16 @@ function FormTextArea({
       rows={rows}
       label={label}
       InputLabelProps={labelProps}
-      className={classes}
-      value={defaultValue}
-      onChange={() => handleChange(key)}
+      value={value}
+      onChange={handleChange(attr)}
     />
   );
 }
 
 FormTextArea.propTypes = {
-  classes: PropTypes.object.isRequired,
   label: PropTypes.string.isRequired,
-  defaultValue: PropTypes.string.isRequired,
-  key: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  attr: PropTypes.string.isRequired,
   rows: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
 };
