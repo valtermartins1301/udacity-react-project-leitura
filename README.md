@@ -6,9 +6,20 @@ Projeto em react-redux para a finalização do módulo `react-redux` da Udacity.
 
 > node >=v6.11.0
 
+### Servidor
+
+> - git clone git@github.com:udacity/reactnd-project-readable-starter.git
+> - cd reactnd-project-readable-starter/api-server
+> - yarn install
+> - yarn start
+
 ## Instalação
 
 > yarn install
+
+## Execução
+
+> yarn start
 
 ## Especificação
 Funcionalidades desejadas na applicação.
