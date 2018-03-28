@@ -7,11 +7,14 @@ import Typography from 'material-ui/Typography';
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import styles from '../styles/PostDetail';
+import { fetchPost } from '../actions/post';
 
 class PostDetail extends Component {
   componentDidMount() {
-    const { dispatch } = this.props;
-    // dispatch();
+    const { dispatch, match } = this.props;
+    const { id } = match.params;
+
+    dispatch(fetchPost(id));
   }
 
   render() {
@@ -37,6 +40,7 @@ PostDetail.propTypes = {
   classes: PropTypes.object.isRequired,
   post: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired,
+  match: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
