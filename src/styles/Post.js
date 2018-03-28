@@ -2,6 +2,9 @@ const styles = theme => ({
   card: {
     minWidth: 275,
   },
+  content: {
+    textDecoration: 'none',
+  },
   category: {
     marginBottom: 16,
     fontSize: 12,

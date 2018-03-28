@@ -10,6 +10,7 @@ import Navigation from './Navigation';
 import styles from '../styles/Root';
 import PostsByCategory from './PostsByCategory';
 import CreatePost from './CreatePost';
+import PostDetail from './PostDetail';
 
 const Root = ({ store, classes }) => (
   <Provider store={store}>
@@ -23,6 +24,7 @@ const Root = ({ store, classes }) => (
               <Route exact path="/" component={PostList} />
               <Route path="/categories" component={PostsByCategory} />
               <Route path="/create-post" component={CreatePost} />
+              <Route path="/post/:id" component={PostDetail} />
             </Paper>
           </div>
         </Router>

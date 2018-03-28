@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import { Link } from 'react-router-dom';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import Moment from 'react-moment';
@@ -11,11 +12,11 @@ function Post({ classes, post }) {
   return (
     <div className={classes.root}>
       <Card className={classes.card}>
-        <CardContent>
+        <CardContent className={classes.content} component={Link} to={`/post/${post.id}`}>
           <Typography className={classes.category}>
             {post.category}
           </Typography>
-          <Typography variant="headline" component="h2" className={classes.title}>
+          <Typography variant="headline" className={classes.title}>
             {post.title}
           </Typography>
           <Typography className={classes.author}>
