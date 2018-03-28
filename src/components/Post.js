@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { Link } from 'react-router-dom';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
-import Typography from 'material-ui/Typography';
 import Moment from 'react-moment';
+import Typography from 'material-ui/Typography';
 import VoteScore from './VoteScore';
 import styles from '../styles/Post';
 

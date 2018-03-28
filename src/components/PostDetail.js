@@ -4,7 +4,8 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
-import Paper from 'material-ui/Paper';
+import Card, { CardContent } from 'material-ui/Card';
+import Moment from 'react-moment';
 import Grid from 'material-ui/Grid';
 import styles from '../styles/PostDetail';
 import { fetchPost } from '../actions/post';
@@ -24,11 +25,22 @@ class PostDetail extends Component {
       <Grid container className={classes.root}>
         <Grid item xs={12}>
           <Grid container justify="center">
-            <Paper className={classes.paper}>
-              <Typography variant="display1" color="inherit">
-                {post.title}
-              </Typography>
-            </Paper>
+            <Card className={classes.card}>
+              <CardContent>
+                <Typography className={classes.category}>
+                  {post.category}
+                </Typography>
+                <Typography variant="headline" className={classes.title}>
+                  {post.title}
+                </Typography>
+                <Typography className={classes.author}>
+                  {post.author} - <Moment format="DD/MM/YYYY">{post.timestamp}</Moment>
+                </Typography>
+                <Typography component="p">
+                  {post.body}
+                </Typography>
+              </CardContent>
+            </Card>
           </Grid>
         </Grid>
       </Grid>
