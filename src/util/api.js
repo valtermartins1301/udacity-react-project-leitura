@@ -31,6 +31,12 @@ export const fetchAllPosts = async () => {
   return response.map(item => postFactory.create(item));
 };
 
+export const fetchPostById = async (id) => {
+  const response = await fetchResource(`posts/${id}`);
+
+  return postFactory.create(response);
+};
+
 export const fetchAllCategories = async () => {
   const { categories } = await fetchResource('categories');
 
@@ -59,4 +65,5 @@ export default {
   fetchPostsByCategory,
   fetchAllPosts,
   fetchAllCategories,
+  fetchPostById,
 };
