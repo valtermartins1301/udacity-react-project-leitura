@@ -1,6 +1,6 @@
 const styles = theme => ({
   card: {
-    width: '70vw',
+    margin: '1px 1em',
   },
   category: {
     marginBottom: 16,

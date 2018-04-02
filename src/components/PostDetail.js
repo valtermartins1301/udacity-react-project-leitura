@@ -9,6 +9,7 @@ import Moment from 'react-moment';
 import Grid from 'material-ui/Grid';
 import styles from '../styles/PostDetail';
 import { fetchPost } from '../actions/post';
+import CommentList from './CommentList';
 
 class PostDetail extends Component {
   componentDidMount() {
@@ -19,12 +20,13 @@ class PostDetail extends Component {
   }
 
   render() {
-    const { classes, post } = this.props;
+    const { classes, post, match } = this.props;
+    const { id } = match.params;
 
     return (
       <Grid container className={classes.root}>
         <Grid item xs={12}>
-          <Grid container justify="center">
+          <Grid container direction="column" justify="center">
             <Card className={classes.card}>
               <CardContent>
                 <Typography className={classes.category}>
@@ -41,6 +43,7 @@ class PostDetail extends Component {
                 </Typography>
               </CardContent>
             </Card>
+            <CommentList postId={id} />
           </Grid>
         </Grid>
       </Grid>
