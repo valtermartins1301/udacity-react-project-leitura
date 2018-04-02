@@ -1,5 +1,6 @@
 import postFactory from '../factories/Post';
 import categoryFactory from '../factories/Category';
+import commentFactory from '../factories/Comment';
 
 const SERVER_IP = process.env.REACT_APP_SERVER_IP;
 const SERVER_PORT = process.env.REACT_APP_SERVER_PORT;
@@ -17,6 +18,12 @@ const fetchResource = async (resource, options) => {
   const response = await fetch(url, requestOptions);
 
   return response.json();
+};
+
+export const fetchAllComments = async (postId) => {
+  const response = await fetchResource(`posts/${postId}/comments`);
+
+  return response.map(item => commentFactory.create(item));
 };
 
 export const fetchPostsByCategory = async (category) => {
@@ -62,6 +69,7 @@ export const createPost = ({
 };
 
 export default {
+  fetchAllComments,
   fetchPostsByCategory,
   fetchAllPosts,
   fetchAllCategories,
